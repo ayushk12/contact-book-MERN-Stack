@@ -1,25 +1,26 @@
 import React, { Component } from "react";
-import addContact from "./addContact";
-import { Route, Switch, Link } from " react-router-dom";
+import Addcontact from "./addContact";
+import { Route, Switch, Link } from "react-router-dom";
 import { BrowserRouter as Router } from "react-router-dom";
-import contactList from "./contactList";
-import modifyContact from "./modifyContact";
+import Contactlist from "./contactList";
+import Modifycontact from "./modifyContact";
 
-class ContactApp extends Component {
+class Contactapp extends Component {
   constructor(props) {
     super(props);
     this.state = { editcontact: "" };
   }
-  statetransfer = (data) => {
+
+  statetransfert = (data) => {
     this.setState({ editcontact: data });
   };
 
   render() {
     return (
       <Router>
-        <div className="contactNav">
-          <h1>Contact App</h1>
-          <div className="button">
+        <div className="contactnav">
+          <h1> Welcome to my Contact App </h1>
+          <div className="buttonform">
             <Link to="/contactlist">
               {" "}
               <button type="button" class="btn btn-secondary">
@@ -28,22 +29,24 @@ class ContactApp extends Component {
             </Link>
             <Link to="/addcontact">
               {" "}
-              <button type="button" class="btn btn-secondary">
-                Contact List
+              <button type="button" class="btn btn-success">
+                {" "}
+                Add Contact
               </button>{" "}
             </Link>
           </div>
+
           <Switch>
-            <Route exact path="/addcontact" render={() => <addContact />} />
+            <Route exact path="/addcontact" render={() => <Addcontact />} />
             <Route
               exact
               path="/contactlist"
-              render={() => <contactList transfert={this.statetransfer} />}
+              render={() => <Contactlist transfert={this.statetransfert} />}
             />
             <Route
               exact
               path="/editcontact"
-              render={() => <modifyContact edit={this.state.editcontact} />}
+              render={() => <Modifycontact edit={this.state.editcontact} />}
             />
           </Switch>
         </div>
@@ -52,4 +55,4 @@ class ContactApp extends Component {
   }
 }
 
-export default ContactApp;
+export default Contactapp;
