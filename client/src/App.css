@@ -1,9 +1,8 @@
-.contactNav {
+.contactnav {
   text-align: center;
 }
-
-.contactNav h1 {
-  color: red;
+.contactnav h1 {
+  color: brown;
   margin-top: 30px;
   font-family: "Open Sans", "Helvetica Neue", sans-serif;
 }
@@ -33,4 +32,18 @@ form label {
 }
 .form-control {
   width: 500px;
+}
+.buttoncard button {
+  width: 80px;
+  margin: 20px;
+}
+
+.card {
+  margin: 20px;
+}
+
+.contactlist {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
 }
